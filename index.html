@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collin Kyeyune - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 60px;
+            line-height: 1.6;
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            animation: subtlePulse 10s ease-in-out infinite alternate;
+        }
+        header {
+            background-color: #282a36;
+            padding: 15px 20px;
+            text-align: center; /* Center text within the header */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically for centering */
+            align-items: center; /* Center items horizontally */
+        }
+        header h1 {
+            margin: 0;
+            color: #6272a4;
+        }
+        header p {
+            margin: 5px 0 10px 0; /* Add some spacing around the title/subtitle */
+            font-size: 0.9em;
+            color: #f8f8f2;
+        }
+        nav {
+            /* Already centered due to header's flex and align-items */
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #6272a4;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #6272a4;
+            color: #f8f8f2;
+            text-decoration: none;
+        }
+        section {
+            padding: 80px 20px;
+            margin-top: 0;
+        }
+        h1, h2, h3 {
+            color: #6272a4;
+        }
+        footer {
+            background-color: #282a36;
+            color: #f8f8f2;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #6272a4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        strong {
+            color: #f8f8f2;
+        }
+        .social-icons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #6272a4;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #f8f8f2;
+        }
+        #projects {
+            text-align: center;
+        }
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .project-card {
+            background-color: #282a36;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 5px;
+            width: 320px;
+            margin-bottom: 25px;
+	    border: 1px solid #44475a; /* Added border */
+	    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Added static shadow */
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Added border-color */
+        }
+        .project-card:hover {
+            background-color: #44475a;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Enhanced hover shadow */
+	    transform: scale(1.02); /* Slightly increase the size on hover */
+	    border-color: #6272a4; /* Change border color on hover */
+        }
+
+	.project-card h3 i {
+    margin-right: 0.5em; /* Add some space to the right of the icon */
+    color: #6272a4; /* Use your accent color for the icons */
+}	
+
+        #home {
+            text-align: center;
+            padding-top: 100px;
+        }
+        #about h3 {
+            margin-top: 20px;
+        }
+        #contact ul {
+            padding-left: 20px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-badge {
+            background-color: #44475a;
+            color: #f8f8f2;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+	
+
+	#elevator-pitch {
+    text-align: center;
+    padding: 80px 20px; /* Adjust padding as needed */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Adjust maximum width as needed */
+    margin: 20px auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container::after {
+    display: block;
+    content: "";
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (common for videos) */
+}
+
+
+        @keyframes subtlePulse {
+            from {
+                background-color: #1e1e1e;
+            }
+            to {
+                background-color: #4a5a8c;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+            header nav {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            header nav a {
+                margin: 0 10px;
+            }
+            .projects-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-card {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #home img {
+                width: 120px;
+                height: 120px;
+            }
+            section {
+                padding: 60px 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            header nav a {
+                font-size: 0.9em;
+                margin: 0 5px;
+            }
+            #home img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Collin Kyeyune</h1>
+        <p>An Analyst with a thing for data!</p>
+        <nav>
+            <a href="#home">Home</a> | <a href="#projects">Projects</a> | <a href="#about">About Me</a> | <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <img src="profile.jpg" alt="Your Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 20px auto;">
+            <h2>Welcome!</h2>
+            <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
+            <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
+            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
+        </section>
+	<section id="elevator-pitch">
+    		<h2>My Elevator Pitch</h2>
+    		<div class="video-container">
+			<iframe width="315" height="560" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        	</div>
+	</section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+    <h3><i class="fas fa-chart-bar"></i> Example Data Analysis Project 1</h3>
+    <p>A brief description of this example data analysis project...</p>
+    <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
+</div>
+
+<div class="project-card">
+    <h3><i class="fas fa-eye"></i> Example Data Visualization Project 2</h3>
+    <p>Another brief description of a data visualization project...</p>
+    <p><strong>Tools:</strong> Power BI, Tableau</p>
+</div>
+
+<div class="project-card">
+    <h3><i class="fas fa-brain"></i> Example Machine Learning Exploration 3</h3>
+    <p>A short description of a machine learning exploration...</p>
+    <p><strong>Tools:</strong> Python, Scikit-learn</p>
+</div>
+
+<div class="project-card">
+    <h3><i class="fas fa-code"></i> Example SQL-Based Analysis 4</h3>
+    <p>A description of a project focused on data retrieval and analysis using SQL...</p>
+    <p><strong>Tools:</strong> SQL, PostgreSQL</p>
+</div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Before Data Analytics, Collin provided support to a records department during records digitization projects in a banking institution. After that, he became a Data Collector at an international NGO where he got inspired to pursue a career in analysis. Later I graduated with honors from Makerere University with a Bachelor's degree in Business Administration. He got back to work and never looked back.</p>
+            <h3>Skills</h3>
+            <div class="skills-container">
+                <span class="skill-badge">Data Preparation</span>
+                <span class="skill-badge">Data Analysis</span>
+                <span class="skill-badge">Data Visualization</span>
+                <span class="skill-badge">Communicating Insights</span>
+            </div>
+            <h3>Tools</h3>
+            <div class="skills-container">
+                <span class="skill-badge">Excel</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Power BI</span>
+                <span class="skill-badge">Python</span>
+            </div>
+            <h3>What Excites Me</h3>
+            <p>With data analysis, I can influence business strategy and success. The problems that particularly interest me are in finance, etc.</p>
+            <h3>Learning Journey</h3>
+            <p>My learning journey in data analysis includes the ALX Professional Foundations course and the ALX Data Analytics course.</p>
+            <h3>My Goals</h3>
+            <p>My goal is to help organizations make smart decisions and contribute towards their success through insightful data analysis.</p>
+            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out if you have any questions or opportunities!</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:kyeyunecollin90@gmail.com"><i class="fas fa-envelope"></i> kyeyunecollin90@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/collin-kyeyune" target="_blank"><i class="fab fa-linkedin"></i> Collin Kyeyune</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/collin-kyeyune" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; border: none; outline: none; background-color: #6272a4; color: white; cursor: pointer; padding: 15px; border-radius: 10px; font-size: 16px;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        sections.forEach(section => {
+            section.classList.add('section-fade-in');
+            observer.observe(section);
+        });
+
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+        scrollToTopBtn.onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Collin Kyeyune</p>
+    </footer>
+
+</body>
+</html>
