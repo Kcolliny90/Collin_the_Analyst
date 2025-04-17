@@ -1,5 +1,5 @@
-## Hi there 👋
-
+## WARNING 🛑 WARNING 🛑 WARNING 🛑
+## ❌❌COPYING/DOWNLOADING ANY OF THESE FILES/ASSETS FROM THIS REPOSITORY IS NOT ALLOWED.
 <!--
 **Kcolliny90/Kcolliny90** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
