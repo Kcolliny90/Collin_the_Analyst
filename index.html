@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            color: #f8f8f2;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            background: linear-gradient(to right, #1e1e1e, #282a36, #44475a); /* Initial gradient */
-            background-size: 300% 100%;
-            animation: backgroundTransition 10s ease infinite;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    		margin: 0;
+    		color: #f8f8f2;
+    		line-height: 1.6;
+    		overflow-x: hidden; /* Prevent horizontal scroll */
+    		background: linear-gradient(to right, #282a36, #44475a, #6272a4, #1e1e1e); /* More distinct colors */
+    		background-size: 400% 100%; /* Match the number of colors */
+    		animation: prominentBackgroundTransition 10s ease infinite;
         }
 
-        @keyframes backgroundTransition {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes prominentBackgroundTransition {
+    		0% { background-position: 0% 50%; }
+    		25% { background-position: 100% 50%; } /* Transition to the end */
+    		50% { background-position: 0% 50%; }   /* Transition back */
+    		75% { background-position: 100% 50%; } /* Transition to the end again */
+    		100% { background-position: 0% 50%; }  /* Cycle complete */
+	}
 
         header {
             background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
