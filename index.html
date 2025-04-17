@@ -265,11 +265,18 @@
     }
 }
 
-@media (max-width: 480px) {
-    header nav a {
-        margin: 0 5px;
-    }
-}
+	@media (max-width: 480px) {
+    		header nav a {
+        	margin: 0 5px;
+    		}
+	}
+	/* Force all elements to fit within the viewport on small screens */
+	@media (max-width: 768px) {
+    	body * {
+        	max-width: 100% !important;
+        	box-sizing: border-box !important;
+    		}
+	}
 
     </style>
 </head>
