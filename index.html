@@ -8,21 +8,21 @@
     <style>
         body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    		margin: 0;
+   		margin: 0;
     		color: #f8f8f2;
     		line-height: 1.6;
-    		overflow-x: hidden; /* Prevent horizontal scroll */
-    		background: linear-gradient(to right, #282a36, #44475a, #6272a4, #1e1e1e); /* More distinct colors */
-    		background-size: 400% 100%; /* Match the number of colors */
-    		animation: prominentBackgroundTransition 10s ease infinite;
+   		overflow-x: hidden; /* Prevent horizontal scroll */
+   		background: linear-gradient(to right, #282a36, #44475a, #4a5a8c, #1e1e1e); /* Muted blue (#4a5a8c) */
+   		background-size: 400% 100%; /* Match the number of colors */
+   		animation: prominentBackgroundTransition 15s ease infinite; /* Slower animation (15 seconds) */
         }
 
         @keyframes prominentBackgroundTransition {
     		0% { background-position: 0% 50%; }
-    		25% { background-position: 100% 50%; } /* Transition to the end */
-    		50% { background-position: 0% 50%; }   /* Transition back */
-    		75% { background-position: 100% 50%; } /* Transition to the end again */
-    		100% { background-position: 0% 50%; }  /* Cycle complete */
+   		25% { background-position: 100% 50%; } /* Transition to the end */
+   		50% { background-position: 0% 50%; }   /* Transition back */
+   		75% { background-position: 100% 50%; } /* Transition to the end again */
+   		100% { background-position: 0% 50%; }  /* Cycle complete */
 	}
 
         header {
