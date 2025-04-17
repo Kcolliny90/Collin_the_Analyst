@@ -25,17 +25,18 @@
 
         header {
             background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
-            color: #f8f8f2;
-            padding: 20px;
+   	    color: #f8f8f2;
+            padding: 20px 0; /* Reduce horizontal padding, keep vertical */
             text-align: center;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: fixed; /* Make header fixed */
-            top: 0;
-            left: 0;
-            width: 100%; /* Ensure it spans the entire width */
-            z-index: 10;
+    	    flex-direction: column;
+    	    align-items: center;
+    	    position: fixed; /* Make header fixed */
+    	    top: 0;
+    	    left: 0;
+    	    width: 100%; /* Ensure it spans the entire width */
+    	    z-index: 10;
+    	    box-sizing: border-box; /* Include padding and border in the width */
         }
 
         header h1 {
@@ -254,6 +255,22 @@
             max-width: 100%;
             box-sizing: border-box;
         }
+
+	@media (max-width: 768px) {
+    header {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+    header nav a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav a {
+        margin: 0 5px;
+    }
+}
+
     </style>
 </head>
 <body>
