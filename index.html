@@ -24,15 +24,17 @@
         }
 
         header {
-            background-color: rgba(40, 42, 54, 0.9); /* Semi-transparent */
+            background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
             color: #f8f8f2;
             padding: 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: sticky; /* Keep header at the top on scroll */
+            position: fixed; /* Make header fixed */
             top: 0;
+            left: 0;
+            width: 100%; /* Ensure it spans the entire width */
             z-index: 10;
         }
 
@@ -55,7 +57,10 @@
         }
 
         main {
-            padding: 40px 20px;
+            padding-top: 80px; /* Add padding to avoid content being hidden under fixed header */
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
         }
 
         section {
@@ -185,11 +190,6 @@
             margin-top: 20px;
         }
 
-        .social-icons p {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
         footer {
             text-align: center;
             padding: 20px;
@@ -277,7 +277,7 @@
         <section id="elevator-pitch">
             <h2>My Elevator Pitch</h2>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="315" height="560" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -329,7 +329,6 @@
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
                 <a href="mailto:kyeyunecollin90@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
-                <p>kyeyunecollin90@gmail.com</p>
             </div>
         </section>
     </main>
