@@ -52,6 +52,14 @@
             border-radius: 8px;
             background-color: #282a36;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         section h2 {
@@ -94,7 +102,9 @@
             border-radius: 5px;
             width: 320px;
             margin-bottom: 25px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #44475a; /* Added border */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Added static shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* Added transform and border-color */
         }
 
         .project-card h3 {
@@ -112,7 +122,9 @@
 
         .project-card:hover {
             background-color: #44475a;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02); /* Subtle scale on hover */
+            border-color: #6272a4; /* Border color transition on hover */
         }
 
         #about {
@@ -167,53 +179,53 @@
             width: 100%;
         }
 
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px;
-                flex-direction: column;
-                align-items: center;
-            }
-            header nav {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-            header nav a {
-                margin: 0 10px;
-            }
-            .projects-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .project-card {
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            #home img {
-                width: 120px;
-                height: 120px;
-            }
-            section {
-                padding: 60px 15px;
-            }
+        #learning-journey {
+            text-align: center;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-            header p {
-                font-size: 0.9em;
-            }
-            header nav a {
-                font-size: 0.9em;
-                margin: 0 5px;
-            }
-            #home img {
-                width: 100px;
-                height: 100px;
-            }
+        .certificate-container {
+            background-color: #282a36;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 5px;
+            width: 80%; /* Adjust width as needed */
+            max-width: 600px; /* Set a maximum width */
+            margin: 20px auto;
+            border: 1px solid #44475a;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-container h3 {
+            color: #6272a4;
+            margin-top: 0;
+        }
+
+        .certificate-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #6272a4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #4a5a8c;
         }
     </style>
 </head>
@@ -235,26 +247,33 @@
             <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
+        <section id="elevator-pitch">
+            <h2>My Elevator Pitch</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="<iframe width="315" height="560" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <h3>Example Data Analysis Project 1</h3>
+                    <h3><i class="fas fa-chart-bar"></i> Example Data Analysis Project 1</h3>
                     <p>A brief description of this example data analysis project.</p>
                     <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
                 </div>
                 <div class="project-card">
-                    <h3>Example Data Visualization Project 2</h3>
+                    <h3><i class="fas fa-eye"></i> Example Data Visualization Project 2</h3>
                     <p>Another brief description of a data visualization project.</p>
                     <p><strong>Tools:</strong> Power BI, Tableau</p>
                 </div>
                 <div class="project-card">
-                    <h3>Example Machine Learning Exploration 3</h3>
+                    <h3><i class="fas fa-brain"></i> Example Machine Learning Exploration 3</h3>
                     <p>A short description of a machine learning exploration.</p>
                     <p><strong>Tools:</strong> Python, Scikit-learn</p>
                 </div>
                 <div class="project-card">
-                    <h3>Example SQL-Based Analysis 4</h3>
+                    <h3><i class="fas fa-code"></i> Example SQL-Based Analysis 4</h3>
                     <p>A description of a project focused on data retrieval and analysis using SQL.</p>
                     <p><strong>Tools:</strong> SQL, PostgreSQL</p>
                 </div>
@@ -264,26 +283,16 @@
         <section id="about">
             <h2>About Me</h2>
             <p>A brief introduction about yourself and your journey into data analysis.</p>
-            <h3>Skills</h3>
-            <div class="skills-container">
-                <span class="skill-badge">Data Preparation</span>
-                <span class="skill-badge">Data Analysis</span>
-                <span class="skill-badge">Data Visualization</span>
-                <span class="skill-badge">Communicating Insights</span>
-            </div>
-            <h3>Tools</h3>
-            <div class="skills-container">
-                <span class="skill-badge">Excel</span>
-                <span class="skill-badge">SQL</span>
-                <span class="skill-badge">Power BI</span>
-                <span class="skill-badge">Python</span>
-            </div>
             <h3>What Excites Me</h3>
-            <p>Mention what aspects of data analysis you find most interesting.</p>
+            <p>The potential of data to drive strategic decisions and uncover hidden patterns.</p>
             <h3>Learning Journey</h3>
-            <p>Briefly describe your learning path in data analysis.</p>
+            <div class="certificate-container">
+                <h3>My Certifications</h3>
+                <p>This space will showcase your certificates. You can replace the placeholder image below.</p>
+                <img src="procertificate.png" alt="Certificate Placeholder">
+            </div>
             <h3>My Goals</h3>
-            <p>Outline your aspirations and goals in the field of data analysis.</p>
+            <p>To leverage my analytical skills to contribute to data-driven solutions that have a meaningful impact on organizational success.</p>
             <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
@@ -291,10 +300,14 @@
             <h2>Contact Me</h2>
             <p>Feel free to reach out if you have any questions or opportunities!</p>
             <div class="social-icons">
-                <a href="https://linkedin.com/in/collin-kyeyune" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </section>
     </main>
+
+    <button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; border: none; outline: none; background-color: #6272a4; color: white; cursor: pointer; padding: 15px; border-radius: 10px; font-size: 16px;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer>
         <p>&copy; 2025 Collin Kyeyune</p>
@@ -316,6 +329,20 @@
             section.classList.add('section-fade-in');
             observer.observe(section);
         });
+
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+        scrollToTopBtn.onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 </html>
