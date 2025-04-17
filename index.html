@@ -9,19 +9,31 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #1e1e1e;
             color: #f8f8f2;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            background: linear-gradient(to right, #1e1e1e, #282a36, #44475a); /* Initial gradient */
+            background-size: 300% 100%;
+            animation: backgroundTransition 10s ease infinite;
+        }
+
+        @keyframes backgroundTransition {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header {
-            background-color: #282a36;
+            background-color: rgba(40, 42, 54, 0.9); /* Semi-transparent */
             color: #f8f8f2;
             padding: 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: sticky; /* Keep header at the top on scroll */
+            top: 0;
+            z-index: 10;
         }
 
         header h1 {
@@ -50,7 +62,7 @@
             margin-bottom: 40px;
             padding: 30px;
             border-radius: 8px;
-            background-color: #282a36;
+            background-color: rgba(40, 42, 54, 0.8); /* Semi-transparent */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(20px);
@@ -169,6 +181,15 @@
             color: #f8f8f2;
         }
 
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -227,6 +248,12 @@
         #scrollToTopBtn:hover {
             background-color: #4a5a8c;
         }
+
+        /* Responsive adjustments to prevent horizontal scroll */
+        body, main, section, .projects-container, .project-card {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -250,7 +277,7 @@
         <section id="elevator-pitch">
             <h2>My Elevator Pitch</h2>
             <div class="video-container">
-                <iframe width="560" height="315" src="<iframe width="315" height="560" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -287,7 +314,7 @@
             <p>The potential of data to drive strategic decisions and uncover hidden patterns.</p>
             <h3>Learning Journey</h3>
             <div class="certificate-container">
-                <h3>My Certifications</h3>
+                <h3>My Certificates</h3>
                 <p>This space will showcase your certificates. You can replace the placeholder image below.</p>
                 <img src="procertificate.png" alt="Certificate Placeholder">
             </div>
@@ -301,11 +328,13 @@
             <p>Feel free to reach out if you have any questions or opportunities!</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:kyeyunecollin90@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                <p>kyeyunecollin90@gmail.com</p>
             </div>
         </section>
     </main>
 
-    <button id="scrollToTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; border: none; outline: none; background-color: #6272a4; color: white; cursor: pointer; padding: 15px; border-radius: 10px; font-size: 16px;">
+    <button id="scrollToTopBtn">
         <i class="fas fa-arrow-up"></i>
     </button>
 
