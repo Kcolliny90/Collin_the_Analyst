@@ -14,7 +14,6 @@
             background-color: #1e1e1e;
             color: #f8f8f2;
             animation: subtlePulse 10s ease-in-out infinite alternate;
-	    overflow-x: hidden; /* Prevent horizontal scroll on the body */
         }
         header {
             background-color: #282a36;
@@ -99,20 +98,6 @@
         .social-icons a:hover {
             color: #f8f8f2;
         }
-
-	section,
-.projects-container,
-.project-card,
-.video-container {
-    max-width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-}
-
-#home img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-
         #projects {
             text-align: center;
         }
@@ -147,76 +132,9 @@
 }	
 
         #home {
-            	display: flex;
-    		justify-content: center;
-    		align-items: center;
-    		min-height: 400px; /* Adjust as needed to accommodate the card */
-    		padding: 20px;
-    		perspective: 1000px; /* Creates a 3D space for the flip effect */
+            text-align: center;
+            padding-top: 100px;
         }
-
-	.flip-card {
-    background-color: transparent;
-    width: 300px; /* Adjust width as needed */
-    height: 300px; /* Adjust height to match your image aspect ratio */
-    border: 1px solid #f1f1f1; /* Optional border */
-    border-radius: 10px; /* Optional rounded corners */
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d; /* Enable 3D transformations */
-    cursor: pointer; /* Indicate it's clickable */
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* Rotate the inner container 180 degrees on hover */
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Hide the back face when not visible */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px; /* Match the outer card */
-}
-
-.flip-card-front {
-    background-color: #bbb; /* Placeholder background if image takes time to load */
-}
-
-.flip-card-front img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure image fills the space without distortion */
-    border-radius: 10px;
-}
-
-.flip-card-back {
-    background-color: #282a36; /* Your portfolio background color or another dark color */
-    color: white;
-    transform: rotateY(180deg); /* Initially rotate the back face to hide it */
-    padding: 20px;
-    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
-}
-
-.flip-card-back h2 {
-    margin-top: 0;
-    color: #6272a4; /* Your accent color */
-}
-
-.flip-card-back p {
-    line-height: 1.6;
-}
-
         #about h3 {
             margin-top: 20px;
         }
@@ -341,17 +259,11 @@
 
     <main>
         <section id="home">
-            <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src="field.jpg" alt="My Data Collection Photo">
-            </div>
-            <div class="flip-card-back">
-                <h2>About Me</h2>
-                <p>Your concise bio text goes here. You can include key highlights about your background, skills, and what you're passionate about in data analysis.</p>
-                </div>
-        </div>
-    </div>
+            <img src="profile.jpg" alt="Your Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 20px auto;">
+            <h2>Welcome!</h2>
+            <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
+            <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
+            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 	<section id="elevator-pitch">
     		<h2>My Elevator Pitch</h2>
@@ -390,7 +302,7 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Before Data Analytics, Collin provided support to a records departewewewment during records digitization projects in a banking institution. After that, he became a Data Collector at an international NGO where he got inspired to pursue a career in analysis. Later I graduated with honors from Makerere University with a Bachelor's degree in Business Administration. He got back to work and never looked back.</p>
+            <p>Before Data Analytics, Collin provided support to a records department during records digitization projects in a banking institution. After that, he became a Data Collector at an international NGO where he got inspired to pursue a career in analysis. Later I graduated with honors from Makerere University with a Bachelor's degree in Business Administration. He got back to work and never looked back.</p>
             <h3>Skills</h3>
             <div class="skills-container">
                 <span class="skill-badge">Data Preparation</span>
