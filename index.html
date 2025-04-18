@@ -202,7 +202,7 @@
     	    color: #f8f8f2;
     	    padding: 25px;
     	    border-radius: 5px;
-    	    width: 100%; /* Increase width to take more horizontal space */
+    	    width: 110%; /* Increase width to take more horizontal space */
     	    max-width: 800px; /* Increase maximum width for larger screens */
     	    margin: 30px auto; /* Increase top/bottom margin for more visual separation */
     	    border: 1px solid #44475a;
@@ -278,7 +278,7 @@
 <body>
     <header>
         <h1>Collin Kyeyune</h1>
-        <p>An Analyst with a thing for data!</p>
+        <p>An Analyst <span id="dynamic-subtitle"></span></p>
         <nav>
             <a href="#home">Home</a> | <a href="#projects">Projects</a> | <a href="#about">About Me</a> | <a href="#contact">Contact</a>
         </nav>
@@ -391,5 +391,48 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
+	// this makes the dynamic typing for the targeted header paragraph.
+	<script>
+    const dynamicSubtitle = document.getElementById('dynamic-subtitle');
+    const phrases = [
+        "with a thing for data!",
+        "with proven impact.",
+        "who loves insights.",
+        "on a learning journey."
+        // Add more phrases here as you like
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 100; // milliseconds per character
+    const erasingSpeed = 50;  // milliseconds per character
+    const newPhraseDelay = 1500; // milliseconds before typing the next phrase
+
+    function type() {
+        if (charIndex < phrases[phraseIndex].length) {
+            dynamicSubtitle.textContent += phrases[phraseIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingSpeed);
+        } else {
+            // Pause before erasing
+            setTimeout(erase, newPhraseDelay);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            dynamicSubtitle.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingSpeed);
+        } else {
+            // Move to the next phrase
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            setTimeout(type, typingSpeed);
+        }
+    }
+
+    // Start the typing animation
+    setTimeout(type, 500); // Small delay on page load
+</script>
+
 </body>
 </html>
