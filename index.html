@@ -217,13 +217,13 @@
         }
 
         .certificate-container img {
-            width: 110%; /* Make the image take up a larger percentage of the container width */
+            width: 90%; /* Start with a larger percentage for better mobile viewing */
+    	    max-width: 600px; /* Set a maximum width for larger screens */
     	    height: auto;
     	    display: block;
-    	    margin: 15px auto 0; /* Center the image */
+    	    margin: 15px auto 0;
     	    border-radius: 3px;
-    	    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the image */
-        }
+    	    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 
         #scrollToTopBtn {
             display: none;
@@ -252,13 +252,18 @@
         }
 
 	@media (max-width: 768px) {
-    header {
-        padding: 10px 0; /* Adjust padding for smaller screens */
-    }
-    header nav a {
-        margin: 0 10px;
-    }
-}
+    		header {
+        	padding: 10px 0; /* Adjust padding for smaller screens */
+    		}
+    		header nav a {
+        		margin: 0 10px;
+    		}
+
+		.certificate-container img {
+        		width: 95%; /* Take up even more space on smaller screens */
+        		max-width: none; /* Remove the max-width on smaller screens */
+		 }
+	}
 
 	@media (max-width: 480px) {
     		header nav a {
