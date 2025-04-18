@@ -217,13 +217,22 @@
         }
 
         .certificate-container img {
-            width: 110%; /* Make the image take up a larger percentage of the container width */
-    	    height: auto;
-    	    display: block;
-    	    margin: 15px auto 0; /* Center the image */
-    	    border-radius: 3px;
-    	    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the image */
+            width: 90%; /* Start with a larger percentage for better mobile viewing */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    height: auto;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 3px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
         }
+
+	/* Adjust for smaller screens if needed (optional, but good practice) */
+@media (max-width: 768px) {
+    .certificate-container img {
+        width: 95%; /* Take up even more space on smaller screens */
+        max-width: none; /* Remove the max-width on smaller screens */
+    }
+}
 
         #scrollToTopBtn {
             display: none;
