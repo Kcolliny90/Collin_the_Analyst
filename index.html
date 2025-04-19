@@ -16,33 +16,35 @@
         }
 
         header {
-            background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
-   	    color: #f8f8f2;
-            padding: 20px 0; /* Reduce horizontal padding, keep vertical */
-            text-align: center;
-            display: flex;
-    	    flex-direction: column;
-    	    align-items: center;
-    	    position: fixed; /* Make header fixed */
-    	    top: 0;
-    	    left: 0;
-    	    width: 100%; /* Ensure it spans the entire width */
-    	    z-index: 10;
-    	    box-sizing: border-box; /* Include padding and border in the width */
+    		background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
+    		color: #f8f8f2;
+    		padding: 10px 15px; /* Reduced vertical and horizontal padding */
+    		text-align: center;
+    		position: fixed; /* Make header fixed */
+    		top: 0;
+    		left: 0;
+    		width: 100%; /* Ensure it spans the entire width */
+    		z-index: 10;
+    		box-sizing: border-box; /* Include padding and border in the width */
+    		display: flex;
+    		flex-direction: column; /* Stack elements vertically by default */
+    		align-items: center;
         }
 
         header h1 {
-            margin-bottom: 5px;
+		margin-bottom: 5px; /* Reduced margin for the name */
+    		font-size: 1.5em; /* Slightly smaller font size for the name on smaller screens */	
         }
 
         header nav {
-            margin-top: 10px;
+            margin-top: 5px; /* Reduced top margin for navigation */
         }
 
         header nav a {
             color: #6272a4;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 8px; /* Reduced horizontal margin for navigation links */
+    	    font-size: 0.9em; /* Smaller font size for navigation links */
         }
 
         header nav a:hover {
@@ -251,20 +253,46 @@
             box-sizing: border-box;
         }
 
-	@media (max-width: 768px) {
+	/* Media Query for screens 768px and smaller (typical for tablets and phones) */
+@media (max-width: 768px) {
     header {
-        padding: 10px 0; /* Adjust padding for smaller screens */
+        padding: 8px 10px; /* Further reduced padding on smaller screens */
     }
+
+    header p {
+        font-size: 0.8em; /* Even smaller font size on phones */
+        margin-bottom: 3px;
+    }
+
+    header h1 {
+        font-size: 1.2em; /* Smaller name on phones */
+    }
+
+    header nav {
+        margin-top: 3px;
+    }
+
     header nav a {
-        margin: 0 10px;
+        margin: 0 5px; /* Further reduced navigation link margin */
+        font-size: 0.8em; /* Even smaller navigation links on phones */
     }
 }
 
-	@media (max-width: 480px) {
-    		header nav a {
-        	margin: 0 5px;
-    		}
-	}
+/* Media Query for even smaller screens (e.g., narrow phones) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Ensure vertical stacking */
+        align-items: center;
+    }
+
+    header nav {
+        margin-top: 5px; /* Keep some space */
+    }
+
+    header nav a {
+        margin: 0 3px; /* Even tighter navigation spacing */
+    }
+}
 	/* Force all elements to fit within the viewport on small screens */
 	@media (max-width: 768px) {
     	body * {
