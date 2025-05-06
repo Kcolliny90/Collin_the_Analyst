@@ -38,7 +38,7 @@
 
         header h1 {
             margin-bottom: 3px; /* Reduced margin for the name */
-            font-size: 1.5em; /* Slightly smaller font size for the name on smaller screens */
+            font-size: 1.2em; /* Smaller font size for the name on smaller screens */
         }
 
         header nav {
@@ -48,8 +48,8 @@
         header nav a {
             color: #6272a4;
             text-decoration: none;
-            margin: 0 8px; /* Reduced horizontal margin for navigation links */
-            font-size: 0.9em; /* Smaller font size for navigation links */
+            margin: 0 5px; /* Further reduced navigation link margin */
+            font-size: 0.8em; /* Even smaller navigation links on phones */
         }
 
         header nav a:hover {
@@ -207,10 +207,7 @@
             padding: 20px;
             background-color: #282a36;
             color: #f8f8f2;
-            position: fixed; /* Footer stays at the bottom */
-            bottom: 0;
             width: 100%;
-            z-index: 10;
         }
 
         #learning-journey {
@@ -310,7 +307,7 @@
             }
 
             .social-icons a {
-                font-size: 1.1em; /* Even smaller icons on very narrow phones */
+                font-size: 0.9em; /* Even smaller icons on very narrow phones */
                 margin: 0 5px;
             }
         }
@@ -336,7 +333,7 @@
             <img src="profile.jpg" alt="Your Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 20px auto;">
             <h2>Welcome!</h2>
             <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
-            <p>This is my portfolio where I showcase samples of my work and expertise in data management.</p>
+            <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
             <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
@@ -387,8 +384,6 @@
         <section id="about">
             <h2>About Me</h2>
             <p>A brief introduction about yourself and your journey into data analysis.</p>
-            <h3>What Excites Me</h3>
-            <p>The potential of data to drive strategic decisions and uncover hidden patterns.</p>
             <h3>Skills</h3>
             <div class="skills-container">
                 <span class="skill-badge">Data Preparation</span>
@@ -403,12 +398,13 @@
                 <span class="skill-badge">Power BI</span>
                 <span class="skill-badge">Python</span>
             </div>
-            <h3>Learning Journey</h3>
-            <div class="certificate-container">
+            <div class="certificate-container" id="learning-journey">
                 <h3>My Certificates</h3>
-                <p>This space will showcase your certificates. You can replace the placeholder image below.</p>
-                <img src="placeholder-certificate.png" alt="Certificate Placeholder">
+                <img src="procertificate.png" alt="ALX Professional Foundations Certificate" style="width: 90%; max-width: 600px; height: auto; display: block; margin: 15px auto 0; border-radius: 3px; box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);">
             </div>
+            <h3>My Goals</h3>
+            <p>To leverage my analytical skills to contribute to data-driven solutions that have a meaningful impact on organizational success.</p>
+            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
         <section id="contact">
@@ -421,10 +417,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Collin Kyeyune. All rights reserved.</p>
-    </footer>
 
     <button id="scrollToTopBtn" title="Go to top">Back to Top</button>
 
