@@ -38,7 +38,7 @@
 
         header h1 {
             margin-bottom: 3px; /* Reduced margin for the name */
-            font-size: 1.5em; /* Slightly smaller font size for the name on smaller screens */
+            font-size: 1.2em; /* Smaller font size for the name on smaller screens */
         }
 
         header nav {
@@ -415,4 +415,72 @@
             <h2>Contact Me</h2>
             <p>Feel free to reach out if you have any questions or opportunities!</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/kcolliny90" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:kyeyunecollin90@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Collin Kyeyune. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">Back to Top</button>
+
+    <script>
+        // Get the button
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Dynamic Subtitle Logic
+        const dynamicSubtitle = document.getElementById('dynamic-subtitle');
+        const subtitles = ["Passionate About Data", "Driven by Insights", "Exploring the World of Analytics"];
+        let subtitleIndex = 0;
+
+        function updateSubtitle() {
+            dynamicSubtitle.textContent = subtitles[subtitleIndex];
+            subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+        }
+
+        setInterval(updateSubtitle, 2000); // Change subtitle every 2 seconds
+
+        // Observe sections for fade-in effect
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, {
+            threshold: 0.15 // Trigger when 15% of the section is visible
+        });
+
+        sections.forEach(section => {
+            section.classList.add('section-fade-in');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
