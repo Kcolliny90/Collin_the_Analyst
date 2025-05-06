@@ -16,40 +16,40 @@
         }
 
         header {
-            background-color: rgba(40, 42, 54, 0.7); /* Slightly more transparent */
+            background-color: rgba(40, 42, 54, 0.85); /* Slightly less transparent for better visibility */
             color: #f8f8f2;
-            padding: 10px 15px; /* Reduced vertical and horizontal padding */
+            padding: 8px 15px; /* Adjusted padding */
             text-align: center;
             position: fixed; /* Make header fixed */
             top: 0;
             left: 0;
             width: 100%; /* Ensure it spans the entire width */
-            z-index: 10;
+            z-index: 1000; /* Ensure header is above other content */
             box-sizing: border-box; /* Include padding and border in the width */
             display: flex;
-            flex-direction: column; /* Stack elements vertically by default */
+            flex-direction: column;
             align-items: center;
         }
 
         header p {
-            margin-bottom: 3px; /* Reduced margin for the email and dynamic subtitle */
-            font-size: 0.9em; /* Slightly smaller font size for the email and subtitle */
+            margin-bottom: 2px;
+            font-size: 0.85em;
         }
 
         header h1 {
-            margin-bottom: 3px; /* Reduced margin for the name */
-            font-size: 1.2em; /* Smaller font size for the name on smaller screens */
+            margin-bottom: 2px;
+            font-size: 1.1em; /* Adjusted for fixed header */
         }
 
         header nav {
-            margin-top: 5px; /* Reduced top margin for navigation */
+            margin-top: 3px;
         }
 
         header nav a {
             color: #6272a4;
             text-decoration: none;
-            margin: 0 5px; /* Further reduced navigation link margin */
-            font-size: 0.8em; /* Even smaller navigation links on phones */
+            margin: 0 4px;
+            font-size: 0.75em; /* Adjusted for fixed header */
         }
 
         header nav a:hover {
@@ -57,21 +57,25 @@
         }
 
         main {
-            padding-top: 80px; /* Add padding to avoid content being hidden under fixed header */
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-top: 100px; /* Increased padding to avoid content being hidden under potentially taller fixed header */
+            padding-left: 15px; /* Reduced side padding */
+            padding-right: 15px; /* Reduced side padding */
             padding-bottom: 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         section {
             margin-bottom: 40px;
-            padding: 30px;
+            padding: 25px; /* Adjusted padding */
             border-radius: 8px;
-            background-color: rgba(40, 42, 54, 0.8); /* Semi-transparent */
+            background-color: rgba(40, 42, 54, 0.8);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transform: translateY(10px); /* Reduced slide distance */
-            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; /* Slower, smoother transition */
+            transform: translateY(10px);
+            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         section.visible {
@@ -92,13 +96,33 @@
         }
 
         #home img {
-            width: 150px;
-            height: 150px;
+            width: 120px; /* Slightly smaller image */
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             display: block;
-            margin: 20px auto;
+            margin: 15px auto;
         }
+
+        #elevator-pitch {
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 560px; /* Max width for the video */
+            margin: 0 auto; /* Center the container */
+            /* Maintain aspect ratio if needed, but primary goal is height reduction */
+        }
+
+        .video-container iframe {
+            display: block;
+            margin: 0 auto; /* Center the iframe within the container */
+            max-width: 100%; /* Ensure iframe is responsive */
+        }
+
 
         #projects {
             text-align: center;
@@ -106,7 +130,7 @@
 
         .project-category {
             margin-bottom: 30px;
-            border-top: 2px solid #6272a4; /* Visual separation for categories */
+            border-top: 2px solid #6272a4;
             padding-top: 15px;
         }
 
@@ -119,20 +143,22 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 15px; /* Reduced gap */
             margin-top: 20px;
         }
 
         .project-card {
             background-color: #282a36;
             color: #f8f8f2;
-            padding: 25px;
+            padding: 20px; /* Adjusted padding */
             border-radius: 5px;
-            width: 320px;
-            margin-bottom: 25px;
-            border: 1px solid #44475a; /* Added border */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Added static shadow */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* Added transform and border-color */
+            width: 100%; /* Make cards take full width on small screens */
+            max-width: 300px; /* Max width for larger screens */
+            margin-bottom: 20px;
+            border: 1px solid #44475a;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            box-sizing: border-box;
         }
 
         .project-card h4 {
@@ -143,6 +169,7 @@
 
         .project-card p {
             line-height: 1.6;
+            font-size: 0.9em; /* Slightly smaller text in project cards */
         }
 
         .project-card strong {
@@ -152,8 +179,8 @@
         .project-card:hover {
             background-color: #44475a;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-            transform: scale(1.02); /* Subtle scale on hover */
-            border-color: #6272a4; /* Border color transition on hover */
+            transform: scale(1.02);
+            border-color: #6272a4;
         }
 
         #about {
@@ -170,7 +197,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px; /* Reduced gap */
             margin-top: 10px;
             margin-bottom: 20px;
         }
@@ -178,9 +205,9 @@
         .skill-badge {
             background-color: #44475a;
             color: #f8f8f2;
-            padding: 8px 12px;
+            padding: 6px 10px; /* Adjusted padding */
             border-radius: 5px;
-            font-size: 0.9em;
+            font-size: 0.85em; /* Adjusted font size */
         }
 
         #contact {
@@ -189,9 +216,10 @@
 
         .social-icons a {
             color: #6272a4;
-            margin: 0 15px; /* Increased icon size */
-            font-size: 1.5em; /* Larger icons */
+            margin: 0 12px; /* Adjusted margin */
+            font-size: 2.5em; /* Increased icon size */
             text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for hover */
         }
 
         .social-icons a:hover {
@@ -199,116 +227,150 @@
         }
 
         .social-icons {
-            margin-top: 20px;
+            margin-top: 15px; /* Adjusted margin */
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px; /* Adjusted padding */
             background-color: #282a36;
             color: #f8f8f2;
             width: 100%;
+            box-sizing: border-box;
         }
-
-        #learning-journey {
+        
+        /* Certificate image styling */
+        .certificate-image-container {
             text-align: center;
+            margin-top: 20px; /* Spacing from About Me or previous section */
+            margin-bottom: 30px; /* Spacing before Contact section */
         }
 
-        .certificate-container {
-            background-color: #282a36;
-            color: #f8f8f2;
-            padding: 25px;
-            border-radius: 5px;
+        .certificate-image-container img {
             width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            border: 1px solid #44475a;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .certificate-container h3 {
-            color: #6272a4;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .certificate-container img {
-            width: 90%; /* Adjust for better mobile viewing */
-            max-width: 600px; /* Limit size on larger screens */
+            max-width: 550px; /* Slightly reduced max-width */
             height: auto;
             display: block;
-            margin: 15px auto 0;
+            margin: 0 auto 10px auto; /* Center image and add space for caption */
             border-radius: 3px;
             box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
         }
+        .certificate-image-container p {
+            font-size: 0.9em;
+            color: #bd93f9; /* A slightly different color for emphasis if desired */
+        }
+
 
         #scrollToTopBtn {
             display: none;
             position: fixed;
             bottom: 20px;
-            right: 20px; /* Keep to the right */
-            z-index: 99;
+            right: 20px;
+            z-index: 999; /* Ensure it's above other content but below header if header z-index is higher */
             border: none;
             outline: none;
             background-color: #6272a4;
             color: white;
             cursor: pointer;
-            padding: 12px; /* Slightly smaller button */
-            border-radius: 10px;
-            font-size: 14px; /* Smaller font */
-            transform: rotate(-90deg); /* Make button vertical */
+            padding: 10px 12px; /* Adjusted padding */
+            border-radius: 8px; /* Adjusted border-radius */
+            font-size: 16px; /* Font size for the arrow character, if used, or text */
+            /* transform: rotate(-90deg); No longer rotating for a standard button appearance */
         }
 
         #scrollToTopBtn:hover {
             background-color: #4a5a8c;
         }
 
-        /* Responsive adjustments to prevent horizontal scroll */
-        body, main, section, .projects-container, .project-card {
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Media Query for screens 768px and smaller (typical for tablets and phones) */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             header {
-                padding: 8px 10px; /* Further reduced padding on smaller screens */
+                padding: 6px 10px;
             }
-
-            header p {
-                font-size: 0.8em; /* Even smaller font size on phones */
-                margin-bottom: 3px;
-            }
-
             header h1 {
-                font-size: 1.2em; /* Smaller name on phones */
+                font-size: 1em;
             }
-
-            header nav {
-                margin-top: 3px;
+            header p {
+                font-size: 0.8em;
             }
-
             header nav a {
-                margin: 0 5px; /* Further reduced navigation link margin */
-                font-size: 0.8em; /* Even smaller navigation links on phones */
+                font-size: 0.7em;
+                margin: 0 3px;
             }
-
-            .social-icons a {
-                font-size: 1.3em; /* Smaller icons on phones */
-                margin: 0 8px;
+            main {
+                padding-top: 90px; /* Adjust if header height changes significantly */
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .project-card {
+                max-width: 95%; /* Allow cards to be wider on tablets */
+            }
+             .social-icons a {
+                font-size: 2.2em; /* Slightly smaller for tablets */
+                margin: 0 10px;
+            }
+            .certificate-image-container img {
+                max-width: 90%;
+            }
+            #scrollToTopBtn {
+                padding: 8px 10px;
+                font-size: 14px;
             }
         }
 
-        /* Media Query for even smaller screens (e.g., narrow phones) */
         @media (max-width: 480px) {
-            header nav a {
-                margin: 0 3px; /* Even tighter navigation spacing */
+            header {
+                padding: 5px 8px; /* Minimal padding for very small screens */
             }
-
+             header h1 {
+                font-size: 0.9em;
+            }
+            header p {
+                font-size: 0.75em;
+            }
+            header nav {
+                margin-top: 2px;
+            }
+            header nav a {
+                margin: 0 2px;
+                font-size: 0.65em;
+            }
+            main {
+                padding-top: 80px; /* Adjust based on final header height on small screens */
+            }
+            section {
+                padding: 15px;
+            }
+            #home img {
+                width: 100px;
+                height: 100px;
+            }
+            .project-card {
+                padding: 15px;
+                /* max-width: 100%; Ensure it takes full available width minus margins */
+            }
+            .project-card h4 {
+                font-size: 1.1em;
+            }
+            .project-card p {
+                font-size: 0.85em;
+            }
+            .skill-badge {
+                padding: 5px 8px;
+                font-size: 0.8em;
+            }
             .social-icons a {
-                font-size: 0.9em; /* Even smaller icons on very narrow phones */
-                margin: 0 5px;
+                font-size: 2em; /* Still large, but slightly adjusted for small screens */
+                margin: 0 8px;
+            }
+             .certificate-image-container img {
+                max-width: 95%;
+            }
+            #scrollToTopBtn {
+                padding: 6px 8px;
+                font-size: 12px;
+                bottom: 15px;
+                right: 15px;
             }
         }
     </style>
@@ -329,8 +391,7 @@
     </header>
 
     <main>
-        <section id="home">
-            <img src="profile.jpg" alt="Your Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 20px auto;">
+        <section id="home" class="visible"> <img src="profile.jpg" alt="Collin Kyeyune Profile Picture">
             <h2>Welcome!</h2>
             <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
             <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
@@ -340,13 +401,12 @@
         <section id="elevator-pitch">
             <h2>My Elevator Pitch</h2>
             <div class="video-container">
-                <iframe width="315" height="560" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/AFuo_Fg1Qpo" title="Elevator Pitch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-
             <div class="project-category">
                 <h3>Data Analysis</h3>
                 <div class="projects-container">
@@ -367,19 +427,16 @@
                     </div>
                 </div>
             </div>
-
             <div class="project-category">
                 <h3>Python</h3>
                 <i class="fas fa-tools" style="font-size: 2em; color: #6272a4; margin-bottom: 10px;"></i>
                 <p>Coming Soon</p>
             </div>
-
             <div class="project-category">
-                 <h3>Machine Learning</h3>
-                 <i class="fas fa-tools" style="font-size: 2em; color: #6272a4; margin-bottom: 10px;"></i>
-                 <p>Coming Soon</p>
+                <h3>Machine Learning</h3>
+                <i class="fas fa-tools" style="font-size: 2em; color: #6272a4; margin-bottom: 10px;"></i>
+                <p>Coming Soon</p>
             </div>
-
         </section>
 
         <section id="about">
@@ -401,12 +458,14 @@
             </div>
         </section>
 
-        <img src="procertificate.png" alt="ALX Professional Foundations Certificate" style="width: 90%; max-width: 600px; height: auto; display: block; margin: 15px auto 0; border-radius: 3px; box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);">
-        <p style="text-align: center;">ALX Professional Foundations Certificate</p>
+        <div class="certificate-image-container">
+             <img src="procertificate.png" alt="ALX Professional Foundations Certificate">
+             <p>ALX Professional Foundations Certificate</p>
+        </div>
+
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out if you have any questions or opportunities!</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/kcolliny90" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -416,13 +475,10 @@
     </main>
 
     <footer>
-         <p>&copy; 2025 Collin Kyeyune</p>
-         <p>All rights reserved.</p>
+        <p>&copy; 2025 Collin Kyeyune</p> <p>All rights reserved.</p>
     </footer>
 
-    <button id="scrollToTopBtn" title="Go to top">Back to Top</button>
-
-    <script>
+    <button id="scrollToTopBtn" title="Go to top">&uarr;</button> <script>
         // Get the button
         let scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -450,9 +506,9 @@
         const subtitles = ["Passionate About Data", "Driven by Insights", "Exploring the World of Analytics"];
         let subtitleIndex = 0;
         let charIndex = 0;
-        let typingDelay = 50; // Adjust for typing speed
-        let erasingDelay = 50; // Adjust for erasing speed
-        let newTextDelay = 2000; // Delay between subtitle changes
+        let typingDelay = 50; 
+        let erasingDelay = 50; 
+        let newTextDelay = 2000; 
 
         function typeText() {
             if (charIndex < subtitles[subtitleIndex].length) {
@@ -471,29 +527,43 @@
                 setTimeout(eraseText, erasingDelay);
             } else {
                 subtitleIndex = (subtitleIndex + 1) % subtitles.length;
-                setTimeout(typeText, 500); // Small delay before typing next subtitle
+                setTimeout(typeText, 500); 
             }
         }
 
-        document.addEventListener("DOMContentLoaded", typeText);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Start typing effect
+            if(dynamicSubtitle) { // Ensure the element exists
+                typeText();
+            }
 
-        // Observe sections for fade-in effect
-        const sections = document.querySelectorAll('section');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing once visible
-                }
+            // Observe sections for fade-in effect
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                threshold: 0.1  // Adjusted threshold slightly
             });
-        }, {
-            threshold: 0.15 // Trigger when 15% of the section is visible
-        });
 
-        sections.forEach(section => {
-            section.classList.add('section-fade-in');
-            observer.observe(section);
+            sections.forEach(section => {
+                // section.classList.add('section-fade-in'); // This class was not defined, opacity and transform are handled directly
+                observer.observe(section);
+            });
+
+            // Ensure the first section is visible on load without waiting for scroll
+            const firstSection = document.querySelector('section');
+            if (firstSection && !firstSection.classList.contains('visible')) {
+                 // Check if IntersectionObserver already made it visible
+                const rect = firstSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    firstSection.classList.add('visible');
+                }
+            }
         });
     </script>
 </body>
