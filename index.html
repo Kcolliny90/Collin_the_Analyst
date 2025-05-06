@@ -38,7 +38,7 @@
 
         header h1 {
             margin-bottom: 3px; /* Reduced margin for the name */
-            font-size: 1.2em; /* Smaller font size for the name on smaller screens */
+            font-size: 1.5em; /* Slightly smaller font size for the name on smaller screens */
         }
 
         header nav {
@@ -106,6 +106,8 @@
 
         .project-category {
             margin-bottom: 30px;
+            border-top: 2px solid #6272a4; /* Visual separation for categories */
+            padding-top: 15px;
         }
 
         .project-category h3 {
@@ -187,8 +189,8 @@
 
         .social-icons a {
             color: #6272a4;
-            margin: 0 10px;
-            font-size: 1.1em; /* Smaller icons */
+            margin: 0 15px; /* Increased icon size */
+            font-size: 1.5em; /* Larger icons */
             text-decoration: none;
         }
 
@@ -248,7 +250,7 @@
             display: none;
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: 20px; /* Keep to the right */
             z-index: 99;
             border: none;
             outline: none;
@@ -258,6 +260,7 @@
             padding: 12px; /* Slightly smaller button */
             border-radius: 10px;
             font-size: 14px; /* Smaller font */
+            transform: rotate(-90deg); /* Make button vertical */
         }
 
         #scrollToTopBtn:hover {
@@ -295,7 +298,7 @@
             }
 
             .social-icons a {
-                font-size: 1.1em; /* Smaller icons on phones */
+                font-size: 1.3em; /* Smaller icons on phones */
                 margin: 0 8px;
             }
         }
@@ -307,7 +310,7 @@
             }
 
             .social-icons a {
-                font-size: 0.9em; /* Even smaller icons on very narrow phones */
+                font-size: 1.1em; /* Even smaller icons on very narrow phones */
                 margin: 0 5px;
             }
         }
@@ -333,7 +336,7 @@
             <img src="profile.jpg" alt="Your Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 20px auto;">
             <h2>Welcome!</h2>
             <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
-            <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
+            <p>This is my portfolio where I showcase samples of my work and expertise in data management.</p>
             <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
@@ -406,9 +409,6 @@
                 <p>This space will showcase your certificates. You can replace the placeholder image below.</p>
                 <img src="placeholder-certificate.png" alt="Certificate Placeholder">
             </div>
-            <h3>My Goals</h3>
-            <p>To leverage my analytical skills to contribute to data-driven solutions that have a meaningful impact on organizational success.</p>
-            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
         </section>
 
         <section id="contact">
@@ -455,13 +455,33 @@
         const dynamicSubtitle = document.getElementById('dynamic-subtitle');
         const subtitles = ["Passionate About Data", "Driven by Insights", "Exploring the World of Analytics"];
         let subtitleIndex = 0;
+        let charIndex = 0;
+        let typingDelay = 50; // Adjust for typing speed
+        let erasingDelay = 50; // Adjust for erasing speed
+        let newTextDelay = 2000; // Delay between subtitle changes
 
-        function updateSubtitle() {
-            dynamicSubtitle.textContent = subtitles[subtitleIndex];
-            subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+        function typeText() {
+            if (charIndex < subtitles[subtitleIndex].length) {
+                dynamicSubtitle.textContent += subtitles[subtitleIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, typingDelay);
+            } else {
+                setTimeout(eraseText, newTextDelay);
+            }
         }
 
-        setInterval(updateSubtitle, 2000); // Change subtitle every 2 seconds
+        function eraseText() {
+            if (charIndex > 0) {
+                dynamicSubtitle.textContent = subtitles[subtitleIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, erasingDelay);
+            } else {
+                subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+                setTimeout(typeText, 500); // Small delay before typing next subtitle
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", typeText);
 
         // Observe sections for fade-in effect
         const sections = document.querySelectorAll('section');
