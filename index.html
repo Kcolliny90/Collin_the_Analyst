@@ -9,26 +9,27 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            color: #f8f8f2;
+            color: #333; /* Dark gray text for better readability on white */
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            background-color: #1e1e1e;
+            overflow-x: hidden;
+            background-color: #ffffff; /* White background */
         }
 
         header {
-            background-color: rgba(40, 42, 54, 0.85); /* Slightly less transparent for better visibility */
-            color: #f8f8f2;
-            padding: 8px 15px; /* Adjusted padding */
+            background-color: #f8f9fa; /* Light gray header */
+            color: #2c3e50; /* Dark blue-gray text */
+            padding: 8px 15px;
             text-align: center;
-            position: fixed; /* Make header fixed */
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* Ensure it spans the entire width */
-            z-index: 1000; /* Ensure header is above other content */
-            box-sizing: border-box; /* Include padding and border in the width */
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
         }
 
         header p {
@@ -38,7 +39,8 @@
 
         header h1 {
             margin-bottom: 2px;
-            font-size: 1.1em; /* Adjusted for fixed header */
+            font-size: 1.1em;
+            color: #2c3e50; /* Dark blue-gray */
         }
 
         header nav {
@@ -46,20 +48,21 @@
         }
 
         header nav a {
-            color: #6272a4;
+            color: #3498db; /* Bright blue */
             text-decoration: none;
             margin: 0 4px;
-            font-size: 0.75em; /* Adjusted for fixed header */
+            font-size: 0.75em;
+            font-weight: 500;
         }
 
         header nav a:hover {
-            color: #f8f8f2;
+            color: #2980b9; /* Darker blue on hover */
         }
 
         main {
-            padding-top: 100px; /* Increased padding to avoid content being hidden under potentially taller fixed header */
-            padding-left: 15px; /* Reduced side padding */
-            padding-right: 15px; /* Reduced side padding */
+            padding-top: 100px;
+            padding-left: 15px;
+            padding-right: 15px;
             padding-bottom: 40px;
             width: 100%;
             box-sizing: border-box;
@@ -67,15 +70,16 @@
 
         section {
             margin-bottom: 40px;
-            padding: 25px; /* Adjusted padding */
+            padding: 25px;
             border-radius: 8px;
-            background-color: rgba(40, 42, 54, 0.8);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* White section background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
             max-width: 100%;
             box-sizing: border-box;
+            border: 1px solid #e0e0e0; /* Light border */
         }
 
         section.visible {
@@ -84,8 +88,8 @@
         }
 
         section h2 {
-            color: #f8f8f2;
-            border-bottom: 2px solid #6272a4;
+            color: #2c3e50; /* Dark blue-gray */
+            border-bottom: 2px solid #3498db; /* Blue underline */
             padding-bottom: 10px;
             margin-bottom: 20px;
             text-align: center;
@@ -96,12 +100,13 @@
         }
 
         #home img {
-            width: 120px; /* Slightly smaller image */
+            width: 120px;
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
             display: block;
             margin: 15px auto;
+            border: 3px solid #3498db; /* Blue border */
         }
 
         #elevator-pitch {
@@ -112,17 +117,15 @@
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 560px; /* Max width for the video */
-            margin: 0 auto; /* Center the container */
-            /* Maintain aspect ratio if needed, but primary goal is height reduction */
+            max-width: 560px;
+            margin: 0 auto;
         }
 
         .video-container iframe {
             display: block;
-            margin: 0 auto; /* Center the iframe within the container */
-            max-width: 100%; /* Ensure iframe is responsive */
+            margin: 0 auto;
+            max-width: 100%;
         }
-
 
         #projects {
             text-align: center;
@@ -130,12 +133,12 @@
 
         .project-category {
             margin-bottom: 30px;
-            border-top: 2px solid #6272a4;
+            border-top: 2px solid #3498db; /* Blue border */
             padding-top: 15px;
         }
 
         .project-category h3 {
-            color: #6272a4;
+            color: #2c3e50; /* Dark blue-gray */
             margin-bottom: 15px;
         }
 
@@ -143,44 +146,44 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px; /* Reduced gap */
+            gap: 15px;
             margin-top: 20px;
         }
 
         .project-card {
-            background-color: #282a36;
-            color: #f8f8f2;
-            padding: 20px; /* Adjusted padding */
+            background-color: #f8f9fa; /* Light gray */
+            color: #333; /* Dark text */
+            padding: 20px;
             border-radius: 5px;
-            width: 100%; /* Make cards take full width on small screens */
-            max-width: 300px; /* Max width for larger screens */
+            width: 100%;
+            max-width: 300px;
             margin-bottom: 20px;
-            border: 1px solid #44475a;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
             box-sizing: border-box;
         }
 
         .project-card h4 {
             margin-top: 0;
-            color: #6272a4;
+            color: #3498db; /* Blue */
             margin-bottom: 10px;
         }
 
         .project-card p {
             line-height: 1.6;
-            font-size: 0.9em; /* Slightly smaller text in project cards */
+            font-size: 0.9em;
         }
 
         .project-card strong {
-            color: #6272a4;
+            color: #2c3e50; /* Dark blue-gray */
         }
 
         .project-card:hover {
-            background-color: #44475a;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: #e9ecef;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
             transform: scale(1.02);
-            border-color: #6272a4;
+            border-color: #3498db; /* Blue */
         }
 
         #about {
@@ -188,7 +191,7 @@
         }
 
         #about h3 {
-            color: #6272a4;
+            color: #2c3e50; /* Dark blue-gray */
             margin-top: 20px;
             margin-bottom: 10px;
         }
@@ -197,89 +200,106 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px; /* Reduced gap */
+            gap: 8px;
             margin-top: 10px;
             margin-bottom: 20px;
         }
 
         .skill-badge {
-            background-color: #44475a;
-            color: #f8f8f2;
-            padding: 6px 10px; /* Adjusted padding */
+            background-color: #e3f2fd; /* Very light blue */
+            color: #1976d2; /* Medium blue */
+            padding: 6px 10px;
             border-radius: 5px;
-            font-size: 0.85em; /* Adjusted font size */
+            font-size: 0.85em;
+            border: 1px solid #bbdefb; /* Light blue border */
         }
 
         #contact {
             text-align: center;
         }
 
-        .social-icons a {
-            color: #6272a4;
-            margin: 0 12px; /* Adjusted margin */
-            font-size: 2.5em; /* Increased icon size */
-            text-decoration: none;
-            transition: color 0.3s ease; /* Smooth transition for hover */
-        }
-
-        .social-icons a:hover {
-            color: #f8f8f2;
-        }
-
         .social-icons {
-            margin-top: 15px; /* Adjusted margin */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2c3e50; /* Dark blue-gray */
+            transition: color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .social-link:hover {
+            color: #3498db; /* Blue on hover */
+        }
+
+        .social-link i {
+            font-size: 1.5em;
+            margin-right: 10px;
+            width: 30px;
+            text-align: center;
+            color: #3498db; /* Blue icons */
         }
 
         footer {
             text-align: center;
-            padding: 15px; /* Adjusted padding */
-            background-color: #282a36;
-            color: #f8f8f2;
+            padding: 15px;
+            background-color: #f8f9fa; /* Light gray */
+            color: #2c3e50; /* Dark blue-gray */
             width: 100%;
             box-sizing: border-box;
+            border-top: 1px solid #e0e0e0;
         }
         
-        /* Certificate image styling */
         .certificate-image-container {
             text-align: center;
-            margin-top: 20px; /* Spacing from About Me or previous section */
-            margin-bottom: 30px; /* Spacing before Contact section */
+            margin-top: 20px;
+            margin-bottom: 30px;
         }
 
         .certificate-image-container img {
             width: 90%;
-            max-width: 550px; /* Slightly reduced max-width */
+            max-width: 550px;
             height: auto;
             display: block;
-            margin: 0 auto 10px auto; /* Center image and add space for caption */
+            margin: 0 auto 10px auto;
             border-radius: 3px;
-            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
         }
+        
         .certificate-image-container p {
             font-size: 0.9em;
-            color: #bd93f9; /* A slightly different color for emphasis if desired */
+            color: #3498db; /* Blue */
         }
-
 
         #scrollToTopBtn {
             display: none;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999; /* Ensure it's above other content but below header if header z-index is higher */
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
             border: none;
             outline: none;
-            background-color: #6272a4;
+            background-color: #3498db; /* Blue */
             color: white;
             cursor: pointer;
-            padding: 10px 12px; /* Adjusted padding */
-            border-radius: 8px; /* Adjusted border-radius */
-            font-size: 16px; /* Font size for the arrow character, if used, or text */
-            /* transform: rotate(-90deg); No longer rotating for a standard button appearance */
+            padding: 15px 18px; /* Larger padding */
+            border-radius: 50%; /* Circular button */
+            font-size: 20px; /* Larger font size */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         #scrollToTopBtn:hover {
-            background-color: #4a5a8c;
+            background-color: #2980b9; /* Darker blue */
+            transform: scale(1.1);
         }
 
         /* Responsive adjustments */
@@ -298,31 +318,35 @@
                 margin: 0 3px;
             }
             main {
-                padding-top: 90px; /* Adjust if header height changes significantly */
+                padding-top: 90px;
                 padding-left: 10px;
                 padding-right: 10px;
             }
             .project-card {
-                max-width: 95%; /* Allow cards to be wider on tablets */
+                max-width: 95%;
             }
-             .social-icons a {
-                font-size: 2.2em; /* Slightly smaller for tablets */
-                margin: 0 10px;
+            .social-link {
+                font-size: 1em;
+            }
+            .social-link i {
+                font-size: 1.3em;
             }
             .certificate-image-container img {
                 max-width: 90%;
             }
             #scrollToTopBtn {
-                padding: 8px 10px;
-                font-size: 14px;
+                padding: 12px 15px;
+                font-size: 18px;
+                bottom: 25px;
+                right: 25px;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 5px 8px; /* Minimal padding for very small screens */
+                padding: 5px 8px;
             }
-             header h1 {
+            header h1 {
                 font-size: 0.9em;
             }
             header p {
@@ -336,7 +360,7 @@
                 font-size: 0.65em;
             }
             main {
-                padding-top: 80px; /* Adjust based on final header height on small screens */
+                padding-top: 80px;
             }
             section {
                 padding: 15px;
@@ -347,7 +371,6 @@
             }
             .project-card {
                 padding: 15px;
-                /* max-width: 100%; Ensure it takes full available width minus margins */
             }
             .project-card h4 {
                 font-size: 1.1em;
@@ -359,18 +382,20 @@
                 padding: 5px 8px;
                 font-size: 0.8em;
             }
-            .social-icons a {
-                font-size: 2em; /* Still large, but slightly adjusted for small screens */
-                margin: 0 8px;
+            .social-link {
+                font-size: 0.9em;
             }
-             .certificate-image-container img {
+            .social-link i {
+                font-size: 1.2em;
+            }
+            .certificate-image-container img {
                 max-width: 95%;
             }
             #scrollToTopBtn {
-                padding: 6px 8px;
-                font-size: 12px;
-                bottom: 15px;
-                right: 15px;
+                padding: 10px 13px;
+                font-size: 16px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -380,22 +405,22 @@
         <h1>Collin Kyeyune</h1>
         <p style="margin-bottom: 3px;">
             <a href="mailto:kyeyunecollin90@gmail.com" style="text-decoration: none; color: inherit;">
-                <i class="fas fa-envelope fa-sm" style="margin-right: 5px; color: #6272a4;"></i>
+                <i class="fas fa-envelope fa-sm" style="margin-right: 5px; color: #3498db;"></i>
                 kyeyunecollin90@gmail.com
             </a>
         </p>
-        <p>An Analyst <span id="dynamic-subtitle"></span></p>
+        <p>As a Analyst, I <span id="dynamic-subtitle"></span></p>
         <nav>
             <a href="#home">Home</a> | <a href="#projects">Projects</a> | <a href="#about">About Me</a> | <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="visible"> <img src="profile.jpg" alt="Collin Kyeyune Profile Picture">
+        <section id="home" class="visible"> 
+            <img src="profile.jpg" alt="Collin Kyeyune Profile Picture">
             <h2>Welcome!</h2>
-            <p>From data collection, analysis, interpretation, and visualization to supporting informed decision-making.</p>
-            <p>This is my online portfolio where I'll be showcasing my journey and work in data analysis. Stay tuned for project updates!</p>
-            <hr style="border: 0; height: 1px; background: #6272a4; margin: 30px auto; width: 60%;">
+            <p>This is my portfolio where I showcase samples of my work in data analysis.</p>
+            <hr style="border: 0; height: 1px; background: #3498db; margin: 30px auto; width: 60%;">
         </section>
 
         <section id="elevator-pitch">
@@ -429,12 +454,12 @@
             </div>
             <div class="project-category">
                 <h3>Python</h3>
-                <i class="fas fa-tools" style="font-size: 2em; color: #6272a4; margin-bottom: 10px;"></i>
+                <i class="fas fa-tools" style="font-size: 2em; color: #3498db; margin-bottom: 10px;"></i>
                 <p>Coming Soon</p>
             </div>
             <div class="project-category">
                 <h3>Machine Learning</h3>
-                <i class="fas fa-tools" style="font-size: 2em; color: #6272a4; margin-bottom: 10px;"></i>
+                <i class="fas fa-tools" style="font-size: 2em; color: #3498db; margin-bottom: 10px;"></i>
                 <p>Coming Soon</p>
             </div>
         </section>
@@ -463,22 +488,33 @@
              <p>ALX Professional Foundations Certificate</p>
         </div>
 
-
         <section id="contact">
             <h2>Contact Me</h2>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/kcolliny90" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:kyeyunecollin90@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/collin-kyeyune-25a366241" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/kcolliny90" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:kyeyunecollin90@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Collin Kyeyune</p> <p>All rights reserved.</p>
+        <p>&copy; 2025 Collin Kyeyune</p>
+        <p>All rights reserved.</p>
     </footer>
 
-    <button id="scrollToTopBtn" title="Go to top">&uarr;</button> <script>
+    <button id="scrollToTopBtn" title="Go to top">&uarr;</button>
+
+    <script>
         // Get the button
         let scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -503,7 +539,7 @@
 
         // Dynamic Subtitle Logic
         const dynamicSubtitle = document.getElementById('dynamic-subtitle');
-        const subtitles = ["Passionate About Data", "Driven by Insights", "Exploring the World of Analytics"];
+        const subtitles = ["collect data", "prepare data", "query data", "visualize data", "issue a call to action"];
         let subtitleIndex = 0;
         let charIndex = 0;
         let typingDelay = 50; 
@@ -533,7 +569,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             // Start typing effect
-            if(dynamicSubtitle) { // Ensure the element exists
+            if(dynamicSubtitle) {
                 typeText();
             }
 
@@ -547,18 +583,16 @@
                     }
                 });
             }, {
-                threshold: 0.1  // Adjusted threshold slightly
+                threshold: 0.1
             });
 
             sections.forEach(section => {
-                // section.classList.add('section-fade-in'); // This class was not defined, opacity and transform are handled directly
                 observer.observe(section);
             });
 
             // Ensure the first section is visible on load without waiting for scroll
             const firstSection = document.querySelector('section');
             if (firstSection && !firstSection.classList.contains('visible')) {
-                 // Check if IntersectionObserver already made it visible
                 const rect = firstSection.getBoundingClientRect();
                 if (rect.top <= window.innerHeight && rect.bottom >= 0) {
                     firstSection.classList.add('visible');
